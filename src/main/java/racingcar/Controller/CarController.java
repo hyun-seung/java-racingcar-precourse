@@ -33,7 +33,9 @@ public class CarController {
         }
     }
 
-    public void playOneRound(List<Car> cars) {
-
+    private void playOneRound(List<Car> cars) {
+        for (Car car : cars) {
+            car.moveByRandomNumber();
+        }
     }
 }
