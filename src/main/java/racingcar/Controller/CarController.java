@@ -31,11 +31,15 @@ public class CarController {
         for (int i = 0; i < tryCount; i++) {
             playOneRound(cars);
         }
+
     }
 
     private void playOneRound(List<Car> cars) {
+        List<String> carsStatus = new ArrayList<>();
         for (Car car : cars) {
             car.moveByRandomNumber();
+            carsStatus.add(car.toString());
         }
+        view.printCarsStatus(carsStatus);
     }
 }

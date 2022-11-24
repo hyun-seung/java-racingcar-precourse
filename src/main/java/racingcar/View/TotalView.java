@@ -1,5 +1,7 @@
 package racingcar.View;
 
+import java.util.List;
+
 public class TotalView {
 
     private final InputView input;
@@ -28,5 +30,9 @@ public class TotalView {
             output.printError(e.getMessage());
             return getTryCount();
         }
+    }
+
+    public void printCarsStatus(List<String> carsStatus) {
+        output.printCarsStatus(carsStatus);
     }
 }

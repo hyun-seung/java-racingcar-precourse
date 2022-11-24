@@ -1,5 +1,7 @@
 package racingcar.View;
 
+import java.util.List;
+
 public class OutputView {
 
     private static final String GET_CAR_NAMES = "경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)";
@@ -11,6 +13,16 @@ public class OutputView {
 
     public void printGetTryCount() {
         System.out.println(GET_TRY_COUNT);
+    }
+
+    public void printCarsStatus(List<String> carsStatus) {
+        for(String carStatus : carsStatus) {
+            printCarStatus(carStatus);
+        }
+    }
+
+    private void printCarStatus(String carStatus) {
+        System.out.println(carStatus);
     }
 
     public void printError(String message) {

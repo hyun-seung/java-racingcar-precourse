@@ -3,6 +3,10 @@ package racingcar.Domain;
 import camp.nextstep.edu.missionutils.Randoms;
 
 public class Car {
+
+    private static final String NAME_SEPARATOR = " : ";
+    private static final String ONE_STEP = "-";
+
     private final String name;
     private int position = 0;
 
@@ -22,5 +26,16 @@ public class Car {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append(name + NAME_SEPARATOR);
+        for(int i=0; i<position; i++) {
+            builder.append(ONE_STEP);
+        }
+        builder.append("\n");
+        return builder.toString();
     }
 }
