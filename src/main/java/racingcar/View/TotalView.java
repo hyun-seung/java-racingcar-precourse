@@ -5,7 +5,7 @@ public class TotalView {
     private final InputView input;
     private final OutputView output;
 
-    TotalView() {
+    public TotalView() {
         input = new InputView();
         output = new OutputView();
     }
