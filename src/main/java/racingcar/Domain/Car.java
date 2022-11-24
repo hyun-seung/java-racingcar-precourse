@@ -28,6 +28,14 @@ public class Car {
         return false;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public int getPosition() {
+        return position;
+    }
+
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();

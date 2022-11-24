@@ -35,4 +35,8 @@ public class TotalView {
     public void printCarsStatus(List<String> carsStatus) {
         output.printCarsStatus(carsStatus);
     }
+
+    public void printWinner(List<String> winners) {
+        output.printWinners(winners);
+    }
 }
