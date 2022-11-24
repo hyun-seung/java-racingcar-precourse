@@ -16,13 +16,12 @@ public class CarController {
         view = new TotalView();
     }
 
-    public List<Car> makeCars() {
+    public void makeCars() {
         String[] carNames = view.getCarNames();
         cars = new ArrayList<>();
         for (String carName : carNames) {
             cars.add(makeCar(carName));
         }
-        return cars;
     }
 
     private Car makeCar(String carName) {
@@ -51,7 +50,7 @@ public class CarController {
         int maxPosition = cars.stream().max(new Comparator<Car>() {
             @Override
             public int compare(Car o1, Car o2) {
-                return o2.getPosition() - o1.getPosition();
+                return o1.getPosition() - o2.getPosition();
             }
         }).get().getPosition();
 
