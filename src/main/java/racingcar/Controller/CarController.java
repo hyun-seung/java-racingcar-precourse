@@ -25,4 +25,15 @@ public class CarController {
     private Car makeCar(String carName) {
         return new Car(carName);
     }
+
+    public void playByTryCount(List<Car> cars) {
+        int tryCount = view.getTryCount();
+        for (int i = 0; i < tryCount; i++) {
+            playOneRound(cars);
+        }
+    }
+
+    public void playOneRound(List<Car> cars) {
+
+    }
 }

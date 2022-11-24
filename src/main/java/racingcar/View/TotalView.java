@@ -19,4 +19,14 @@ public class TotalView {
             return getCarNames();
         }
     }
+
+    public int getTryCount() {
+        try {
+            output.printGetTryCount();
+            return input.readTryCount();
+        } catch (IllegalArgumentException e) {
+            output.printError(e.getMessage());
+            return getTryCount();
+        }
+    }
 }

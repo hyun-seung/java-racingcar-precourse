@@ -15,6 +15,7 @@ public class RacingGame {
 
     public void play() {
         cars = carController.makeCars();
+        carController.playByTryCount(cars);
     }
 
 

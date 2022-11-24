@@ -17,4 +17,10 @@ public class InputView {
         validation.isCarNames(names);
         return names;
     }
+
+    public int readTryCount() {
+        String line = Console.readLine();
+        validation.isNumber(line);
+        return Integer.parseInt(line);
+    }
 }

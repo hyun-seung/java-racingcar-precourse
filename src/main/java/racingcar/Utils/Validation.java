@@ -13,4 +13,11 @@ public class Validation {
             }
         }
     }
+
+    public void isNumber(String target) {
+        String numberRegex = "^[0-9]*$";
+        if(!target.matches(numberRegex)) {
+            throw new IllegalArgumentException(ExceptionType.NOT_NUMBERS.toString());
+        }
+    }
 }
