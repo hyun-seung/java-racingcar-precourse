@@ -22,7 +22,7 @@ public class Car {
 
     private boolean isMove() {
         int randomNumber = Randoms.pickNumberInRange(0, 9);
-        if (randomNumber > 4) {
+        if (randomNumber >= 4) {
             return true;
         }
         return false;
