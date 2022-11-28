@@ -10,34 +10,35 @@ import racingcar.View.TotalView;
 public class CarController {
 
     TotalView view;
-    List<Car> cars;
 
     public CarController() {
         view = new TotalView();
     }
 
-    public void makeCars() {
+    public List<Car> makeCars() {
         String[] carNames = view.getCarNames();
-        cars = new ArrayList<>();
+        List<Car> cars = new ArrayList<>();
         for (String carName : carNames) {
             cars.add(makeCar(carName));
         }
+        return cars;
     }
 
     private Car makeCar(String carName) {
         return new Car(carName);
     }
 
-    public void playByTryCount() {
+    public void playByTryCount(List<Car> cars) {
         int tryCount = view.getTryCount();
         for (int i = 0; i < tryCount; i++) {
-            playOneRound();
+            playOneRound(cars);
         }
-        List<String> winnerNames = getWinnerNames(getWinners());
+        List<Car> winners = getWinners(cars);
+        List<String> winnerNames = getWinnerNames(winners);
         view.printWinner(winnerNames);
     }
 
-    private void playOneRound() {
+    private void playOneRound(List<Car> cars) {
         List<String> carsStatus = new ArrayList<>();
         for (Car car : cars) {
             car.moveByRandomNumber();
@@ -46,7 +47,7 @@ public class CarController {
         view.printCarsStatus(carsStatus);
     }
 
-    private List<Car> getWinners() {
+    private List<Car> getWinners(List<Car> cars) {
         int maxPosition = cars.stream().max(new Comparator<Car>() {
             @Override
             public int compare(Car o1, Car o2) {
